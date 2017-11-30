@@ -1,0 +1,32 @@
+{
+  "name": "axel-kummer/aku-logbook",
+  "description": "TYPO3 Extension to send logs to the logbook server",
+  "type": "typo3-cms-extension",
+  "version":"0.0.1",
+  "require": {
+    "typo3/cms": ">=7.6.0",
+    "axel-kummer/logbook-php" : "dev-utility",
+    "php":">=5.6"
+  },
+  "license": "AGPL",
+  "authors": [
+    {
+      "name": "Axel Kummer",
+      "email": "kummeraxel@gmail.com"
+    }
+  ],
+  "replace": {
+    "aku_logbook": "self.version",
+    "typo3-ter/aku-logbook": "self.version"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "aku_logbook"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "AxelKummer\\AkuLogBook\\": "Classes"
+    }
+  }
+}
