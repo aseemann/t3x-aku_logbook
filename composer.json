@@ -8,6 +8,9 @@
     "axel-kummer/logbook-php" : "0.0.1",
     "php":">=5.6"
   },
+  "require-dev":{
+    "phpunit/phpunit" : "*"
+  },
   "license": "AGPL",
   "authors": [
     {
@@ -27,6 +30,11 @@
   "autoload": {
     "psr-4": {
       "AxelKummer\\AkuLogBook\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AxelKummer\\AkuLogBook\\Tests\\": "Tests"
     }
   }
 }
