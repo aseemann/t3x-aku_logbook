@@ -10,5 +10,5 @@ applicationName = TYPO3 Installation
   # cat=basic/enable; type=options[http]; label=Type of request which will be use to send the logs. At the moment only http is available.
 requestType = http
 
-  # cat=basic/enable; type=string; label=Request class. Here you can specify your own request implementation
+  # cat=basic/enable; type=string; label=Request class. Here you can specify your own request implementation (Change this only if you know what you do)
 requestClass = \AxelKummer\LogBook\Request\HttpRequest
