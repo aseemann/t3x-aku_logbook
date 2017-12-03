@@ -22,3 +22,4 @@ If the extension was installed please check if the Extension was activated, if n
 
 Setup the log writer is quite easy. Open the extension configuration and enter the necessary information. 
 
+![Extension Configuration](Documentation/Images/ExtensionConfiguration.jpg)
