@@ -14,13 +14,18 @@ use TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility;
  * Class LogWriter
  *
  * @category Category
- * @package  Package
+ * @package  axel-kummer/aku-logbook
  * @author   Axel Kummer <kummeraxel@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.en.html GPLv3
  * @link     https://github.com/axel-kummer/logbook-php
  */
 class LogWriter extends AbstractWriter
 {
+    /**
+     * Extension configuration
+     *
+     * @var array
+     */
     private $configuration;
 
     /**
