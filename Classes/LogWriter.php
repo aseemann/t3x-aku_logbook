@@ -1,6 +1,6 @@
 <?php
 
-namespace AxelKummer\AkuLogBook;
+namespace AxelKummer\AkuLogbook;
 
 use AxelKummer\LogBook\LoggerUtility;
 use AxelKummer\LogBook\Request\HttpRequest;

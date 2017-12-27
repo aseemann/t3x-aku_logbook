@@ -1,6 +1,6 @@
 <?php
 
-namespace AxelKummer\AkuLogBook;
+namespace AxelKummer\AkuLogbook;
 use TYPO3\CMS\Core\Log\LogManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 

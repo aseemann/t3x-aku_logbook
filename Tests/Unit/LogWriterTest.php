@@ -1,8 +1,8 @@
 <?php
 
-namespace AxelKummer\AkuLogBook\Tests\Unit;
+namespace AxelKummer\AkuLogbook\Tests\Unit;
 
-use AxelKummer\AkuLogBook\LogWriter;
+use AxelKummer\AkuLogbook\LogWriter;
 use TYPO3\CMS\Core\Log\LogLevel;
 use TYPO3\CMS\Core\Log\LogRecord;
 
