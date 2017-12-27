@@ -29,12 +29,12 @@
   },
   "autoload": {
     "psr-4": {
-      "AxelKummer\\AkuLogBook\\": "Classes"
+      "AxelKummer\\AkuLogbook\\": "Classes"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "AxelKummer\\AkuLogBook\\Tests\\": "Tests"
+      "AxelKummer\\AkuLogbook\\Tests\\": "Tests"
     }
   }
 }
