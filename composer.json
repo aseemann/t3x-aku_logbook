@@ -4,7 +4,7 @@
   "type": "typo3-cms-extension",
   "version":"0.0.1",
   "require": {
-    "typo3/cms": ">=7.6.0",
+    "typo3/cms": ">=6.2.30",
     "axel-kummer/logbook-php" : "dev-master",
     "php":">=5.6"
   },
