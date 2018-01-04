@@ -1,6 +1,7 @@
 <?php
 
 namespace AxelKummer\AkuLogbook;
+use TYPO3\CMS\Core\Log\LogLevel;
 use TYPO3\CMS\Core\Log\LogManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -17,6 +18,17 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class DevLogger
 {
     /**
+     * @var array Mapping Array for logLevels
+     */
+    private $severityMap = [
+        GeneralUtility::SYSLOG_SEVERITY_FATAL   => LogLevel::EMERGENCY,
+        GeneralUtility::SYSLOG_SEVERITY_ERROR   => LogLevel::ERROR,
+        GeneralUtility::SYSLOG_SEVERITY_WARNING => LogLevel::WARNING,
+        GeneralUtility::SYSLOG_SEVERITY_NOTICE  => LogLevel::NOTICE,
+        GeneralUtility::SYSLOG_SEVERITY_INFO    => LogLevel::INFO
+    ];
+
+    /**
      * DevLogger
      *
      * @param array $params Array with logging parameters
@@ -32,9 +44,27 @@ class DevLogger
         $logger = $logManager->getLogger($params['extKey']);
 
         $data = is_array($params['dataVar']) ? $params['dataVar'] : [];
-        $severity = ($params['severity'] < 0) ? $params['severity'] * -1: $params['severity'];
 
+        $severity = $this->translateSeverity($params['severity']);
 
         $logger->log($severity, $params['msg'], $data);
+    }
+
+    /**
+     * Translatest the loglevel from syslog to rfc
+     *
+     * @param integer $sysLogLevel sysLogLevel
+     *
+     * @return integer
+     */
+    private function translateSeverity($sysLogLevel)
+    {
+        if ($sysLogLevel < 0) {
+            return LogLevel::DEBUG;
+        }
+
+        if (isset($this->severityMap[$sysLogLevel])) {
+            return $this->severityMap[$sysLogLevel];
+        }
     }
 }
