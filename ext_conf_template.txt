@@ -8,7 +8,10 @@ port = 8080
 applicationName = TYPO3 Installation
 
   # cat=basic/enable; type=options[http]; label=Type of request which will be use to send the logs. At the moment only http is available.
-requestType = http
+requestType =
 
   # cat=basic/enable; type=string; label=Request class. Here you can specify your own request implementation (Change this only if you know what you do)
-requestClass = \AxelKummer\LogBook\Request\HttpRequest
+requestClass =
+
+  # cat=basic/enable; type=string; label=Ignore Patten. Enter regex pattern for loggers which not should send their messages to the logbook
+ignorePattern =

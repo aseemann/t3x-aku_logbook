@@ -76,13 +76,31 @@ class LogWriter extends AbstractWriter
      */
     private function getRequestClass(array $conf)
     {
-        if ($conf['requestClass']['value'] !== $conf['requestClass']['dafult_value']) {
+        if (!empty($conf['requestClass']['value'])) {
             return $conf['requestClass']['value'];
-        } elseif ($conf['requestType']['value'] === "http") {
+        } elseif ($conf['requestType']['value'] === "http" || empty($conf['requestType']['value'])) {
             return HttpRequest::class;
         }
 
-        return '';
+        return false;
+    }
+
+    /**
+     * Returns true if log should be send
+     *
+     * @param string $loggerName Name of logger
+     *
+     * @return bool
+     */
+    private function shouldSendMessage($loggerName)
+    {
+        $conf = $this->getConfiguration();
+
+        if (empty($conf['ignorePattern']['value'])) {
+            return true;
+        }
+
+        return !preg_match('/' . $conf['ignorePattern']['value'] . '/' , $loggerName);
     }
 
     /**
@@ -105,11 +123,15 @@ class LogWriter extends AbstractWriter
      */
     public function writeLog(\TYPO3\CMS\Core\Log\LogRecord $record)
     {
+        if (false === $this->shouldSendMessage($record->getComponent())) {
+            return $this;
+        }
+
         $logger = LoggerUtility::getLogger($record->getComponent());
         $logger->log(
             $record->getLevel(),
             $record->getMessage(),
-            ['requestId' => $record->getRequestId(), 'data'=> $record->getData()]
+            $record->getData()
         );
 
         return $this;
