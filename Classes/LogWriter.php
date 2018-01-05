@@ -131,7 +131,7 @@ class LogWriter extends AbstractWriter
         $logger->log(
             $record->getLevel(),
             $record->getMessage(),
-            $record->getData()
+            ['data' => $record->getData()]
         );
 
         return $this;
