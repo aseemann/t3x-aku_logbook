@@ -11,7 +11,7 @@
   "require-dev":{
     "phpunit/phpunit" : "*"
   },
-  "license": "AGPL",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Axel Kummer",
