@@ -21,8 +21,8 @@ if (false === is_array($GLOBALS['TYPO3_CONF_VARS']['LOG']['writerConfiguration']
 }
 
 $GLOBALS['TYPO3_CONF_VARS']['LOG']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::DEBUG] = array_merge(
-    $writerConfiguration,
-    $GLOBALS['TYPO3_CONF_VARS']['LOG']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::DEBUG]
+    $GLOBALS['TYPO3_CONF_VARS']['LOG']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::DEBUG],
+    $writerConfiguration
 );
 
 /**
