@@ -18,7 +18,6 @@
     }
   ],
   "replace": {
-    "aku_logbook": "self.version",
     "typo3-ter/aku-logbook": "self.version"
   },
   "extra": {
